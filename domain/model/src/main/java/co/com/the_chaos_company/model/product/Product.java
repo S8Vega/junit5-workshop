@@ -2,7 +2,9 @@ package co.com.the_chaos_company.model.product;
 
 import co.com.the_chaos_company.exception.ProductNotValidException;
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 @Getter
 public class Product {
     private final String name;
@@ -26,9 +28,5 @@ public class Product {
 
     private boolean isValidPrice() {
         return price != null && price > 0;
-    }
-
-    public String toString() {
-        return String.format("Product{name='%s', price=%s}", name, price);
     }
 }

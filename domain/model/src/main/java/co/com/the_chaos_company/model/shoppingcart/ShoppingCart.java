@@ -2,14 +2,14 @@ package co.com.the_chaos_company.model.shoppingcart;
 
 import co.com.the_chaos_company.exception.CartItemNotValidException;
 import co.com.the_chaos_company.model.cartitem.CartItem;
-import lombok.Getter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
+@ToString
 public class ShoppingCart {
-    List<CartItem> items;
+    private final List<CartItem> items;
 
     public ShoppingCart() {
         this.items = new ArrayList<>();
@@ -23,12 +23,12 @@ public class ShoppingCart {
         return items.stream().mapToDouble(CartItem::getTotal).sum();
     }
 
+    public Integer getTotalProducts() {
+        return items.stream().mapToInt(CartItem::getQuantity).sum();
+    }
+
     public void addItem(CartItem item) {
         if (!item.isValid()) throw new CartItemNotValidException(item);
         items.add(item);
-    }
-
-    public String toString() {
-        return String.format("ShoppingCart{items=%s}", items);
     }
 }
