@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':model')
+    implementation project(':usecase')
+    implementation 'org.springframework:spring-context'
+    testImplementation 'org.junit.platform:junit-platform-suite:1.10.2'
+
+}

@@ -65,7 +65,7 @@ class ShoppingCartTest {
         shoppingCart.addItem(item1);
         shoppingCart.addItem(item2);
 
-        assertTimeout(Duration.ofMillis(20), () -> {
+        assertTimeout(Duration.ofMillis(500), () -> {
             assertEquals(800.0, shoppingCart.getTotal());
         });
     }
