@@ -1,6 +1,7 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
+	implementation project( ':product-rest')
 	implementation project( ':calculadora')
     implementation project(':model')
     implementation project(':usecase')

@@ -16,3 +16,5 @@ project(':model').projectDir = file('./domain/model')
 project(':usecase').projectDir = file('./domain/usecase')
 include ':calculadora'
 project(':calculadora').projectDir = file('./infrastructure/entry-points/calculadora')
+include ':product-rest'
+project(':product-rest').projectDir = file('./infrastructure/entry-points/product-rest')
